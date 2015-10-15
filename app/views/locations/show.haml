@@ -1,0 +1,21 @@
+%table
+	%tr
+		%td{:style => "width:40%"}
+			%h1{:style => "font-size:100px;text-align:center"}
+				=@location.town.upcase
+		%td{:style => "width:20%"}
+			
+		%td{:style => "width:40%"}
+			%div{:style => "font-size:80px;text-align:center"}
+				%p= "#{@tempC} °C"
+
+/ %div
+/ - if @tempC > 28
+/ 	%div{:style => "font-size:40px;text-align:center;color:red"}
+/ 		Pensez à vous hydrater
+/ 	%iframe{:allowfullscreen => "", :frameborder => "0", :height => "360", :src => "https://www.youtube.com/embed/QITYRHQ_8Us?start=47&end=59&autoplay=1", :width => "640"}
+
+/ - if @tempC < 5
+/ 	%div{:style => "font-size:40px;text-align:center;color:red"}
+/ 		Fous ta cagoule !
+/ 	%iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/Ud_-AuBmp6Q?start=40&end=52&autoplay=1", :width => "420"}

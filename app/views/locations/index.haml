@@ -1,0 +1,33 @@
+%h1 Liste des localités
+
+%script{:src => "//maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry", :type => "text/javascript"}
+%script{:src => "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", :type => "text/javascript"}
+
+%table
+	%thead
+		%tr
+			%th
+				Ville
+			/ %th
+			/ 	Pays
+			%th
+				Latitude
+			%th
+				Longitude
+			%th{:colspan => '2'}
+	%tbody
+		- @locations.each do |l|
+			%tr
+				%td
+					= link_to l.town, show_location_path(l)
+				/ %td
+				/ 	= l.country
+				%td
+					= l.latitude
+				%td
+					= l.longitude
+
+= button_to "Ajouter une ville", locations_new_path, :method => :get 
+
+/ = image_tag "/images/sw.png"
+/ %img{:src => "http://www.google.fr/imgres?imgurl=https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/2000px-Star_Wars_Logo.svg.png&imgrefurl=https://en.wikipedia.org/wiki/Star_Wars_sequel_trilogy&h=1207&w=2000&tbnid=kbhr-YCEsCvL7M:&docid=HlP797eP4amygM&ei=3i0gVpHpEYW2aaPvutAM&tbm=isch&client=ubuntu"}

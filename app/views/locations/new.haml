@@ -1,0 +1,9 @@
+%h1 Ajouter une localité :
+
+= form_for(@location) do |f|
+  = f.label 'Nom de la ville'
+  = f.text_field :town
+  = f.submit 'Valider'
+
+
+/ = button_to 'Annuler', root_path, :methode => :get
