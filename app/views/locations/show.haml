@@ -1,13 +1,19 @@
 %table
 	%tr
-		%td{:style => "width:40%"}
+		%td
 			%h1{:style => "font-size:100px;text-align:center"}
 				=@location.town.upcase
 		%td{:style => "width:20%"}
 			
-		%td{:style => "width:40%"}
-			%div{:style => "font-size:80px;text-align:center"}
-				%p= "#{@tempC} °C"
+		%td
+			%div
+				#temp
+				.divh= "#{@tempC} °C"
+			%div
+				#drop
+				.divh= "#{@humidity} %"
+			%div
+				%p= @icon
 
 / %div
 / - if @tempC > 28

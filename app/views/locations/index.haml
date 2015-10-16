@@ -4,30 +4,22 @@
 %script{:src => "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", :type => "text/javascript"}
 
 %table
-	%thead
+	- @locations.each do |l|
 		%tr
-			%th
-				Ville
-			/ %th
-			/ 	Pays
-			%th
-				Latitude
-			%th
-				Longitude
-			%th{:colspan => '2'}
-	%tbody
-		- @locations.each do |l|
-			%tr
-				%td
-					= link_to l.town, show_location_path(l)
-				/ %td
-				/ 	= l.country
-				%td
-					= l.latitude
-				%td
-					= l.longitude
+			%td
+				= link_to l.town, show_location_path(l)
 
-= button_to "Ajouter une ville", locations_new_path, :method => :get 
+= button_to "Une autre ville ?", locations_new_path, :method => :get 
+
+%div{:style => "width: 800px;"}
+	#map{:style => "width: 800px; height: 400px;"}
+:javascript
+	handler = Gmaps.build('Google');
+		handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+		markers = handler.addMarkers(#{raw @hash.to_json})
+		handler.bounds.extendWith(markers);
+		handler.fitMapToBounds();
+	});
 
 / = image_tag "/images/sw.png"
 / %img{:src => "http://www.google.fr/imgres?imgurl=https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/2000px-Star_Wars_Logo.svg.png&imgrefurl=https://en.wikipedia.org/wiki/Star_Wars_sequel_trilogy&h=1207&w=2000&tbnid=kbhr-YCEsCvL7M:&docid=HlP797eP4amygM&ei=3i0gVpHpEYW2aaPvutAM&tbm=isch&client=ubuntu"}

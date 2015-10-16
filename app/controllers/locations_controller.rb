@@ -2,8 +2,12 @@ class LocationsController < ApplicationController
 
 	def index
 		@locations = Location.all
-		# binding.pry
-		# @forecast = Location.meteo
+
+		@hash = Gmaps4rails.build_markers(@locations) do |location, marker|
+	    marker.lat location.latitude
+	    marker.lng location.longitude
+    end
+
 	end
 
 	def new
@@ -22,12 +26,14 @@ class LocationsController < ApplicationController
 	def show
 		@location = Location.find(params[:id])
 		@tempC = @location.temperature
+		@icon = @location.weather
+		@humidity = @location.humidity * 100
 	end
 
 	private
 
 	def param_location
-		params.require(:location).permit(:town, :country, :lat, :lon)
+		params.require(:location).permit(:town, :country, :latitude, :longitude)
 	end
 
 end

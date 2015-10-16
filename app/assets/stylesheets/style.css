@@ -1,0 +1,59 @@
+body
+{
+  background-color: #BFD4FF;
+}
+
+h1
+{
+  color: #0277BD;
+  margin-left: 50px;
+}
+
+p
+{
+  font-family: helvetica;
+  color: #01579B;
+}
+
+table
+{
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+#map
+{
+  border: 3px solid #0277BD;
+  margin-top: 20px;
+}
+
+th
+{
+  color: red;
+  text-align: left
+}
+
+#temp
+{
+  background-image: url('temp.png');
+  width: 60px;
+  height: 120px;
+  display: inline-block;
+}
+
+#drop
+{
+  background-image: url('drop.png');
+  width: 60px;
+  height: 120px;
+  display: inline-block;
+}
+
+.divh
+{
+  display: inline-block;
+  font-size: 50px;
+  color: #0277BD;
+  margin-left: 30px;
+  height: 100%;
+}
