@@ -1,18 +1,22 @@
-%h1 Liste des localités
-
 %script{:src => "//maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry", :type => "text/javascript"}
 %script{:src => "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", :type => "text/javascript"}
 
-%table
-	- @locations.each do |l|
-		%tr
-			%td
-				= link_to l.town, show_location_path(l)
+%div{:class => 'col-md-4'}
+	%h1	Localités
 
-= button_to "Une autre ville ?", locations_new_path, :method => :get 
+	%table
+		- @locations.each do |l|
+			%tr
+				%td
+					= link_to l.town, show_location_path(l)
+				%td.buttonSupp
+					= link_to "Suppr.", delete_location_path(l), :method => :post, data: { confirm: 'Voulez vous vraiment supprimer la ville ?' }
+	%br
+	= button_to "Une autre ville ?", locations_new_path, :method => :get, :class => 'btn btn-primary goRight' 
 
-%div{:style => "width: 800px;"}
-	#map{:style => "width: 800px; height: 400px;"}
+%div{:style => "width: 800px;", :class => 'col-md-8'}
+	#map{:style => "width: 800px; height: 700px;"}
+
 :javascript
 	handler = Gmaps.build('Google');
 		handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
@@ -20,6 +24,3 @@
 		handler.bounds.extendWith(markers);
 		handler.fitMapToBounds();
 	});
-
-/ = image_tag "/images/sw.png"
-/ %img{:src => "http://www.google.fr/imgres?imgurl=https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/2000px-Star_Wars_Logo.svg.png&imgrefurl=https://en.wikipedia.org/wiki/Star_Wars_sequel_trilogy&h=1207&w=2000&tbnid=kbhr-YCEsCvL7M:&docid=HlP797eP4amygM&ei=3i0gVpHpEYW2aaPvutAM&tbm=isch&client=ubuntu"}

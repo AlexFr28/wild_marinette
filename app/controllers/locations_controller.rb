@@ -30,6 +30,13 @@ class LocationsController < ApplicationController
 		@humidity = @location.humidity * 100
 	end
 
+	def destroy
+		@location = Location.find(params[:id])
+		@location.destroy
+
+		redirect_to root_path
+	end
+
 	private
 
 	def param_location

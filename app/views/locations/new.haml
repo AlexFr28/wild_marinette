@@ -1,9 +1,12 @@
-%h1 Ajouter une localité :
+%div{:class => 'col-md-5'}
 
-= form_for(@location) do |f|
-  = f.label 'Nom de la ville'
-  = f.text_field :town
-  = f.submit 'Valider'
+	%h1 Ajouter une localité :
 
+	= form_for(@location) do |f|
+		= f.label 'Nom de la ville', :class => 'goRight'
+		= f.text_field :town
+		= f.submit 'Valider', :class => 'btn btn-primary goRight2'
+		= button_to 'Annuler', root_path, :methode => :get, :class => 'btn btn-default goRight3' 
 
-/ = button_to 'Annuler', root_path, :methode => :get
+%div{:class => 'col-md-7'}
+	#interrogation

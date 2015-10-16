@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/locations/new' => 'locations#new'
   post '/locations' => 'locations#create'
   get '/locations/show/:id' => 'locations#show', as: :show_location
+  post '/locations/destroy/:id' => 'locations#destroy', as: :delete_location
   resources :locations
 
   # Example of regular route:

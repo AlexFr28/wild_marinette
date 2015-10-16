@@ -1,6 +1,7 @@
 body
 {
   background-color: #BFD4FF;
+  margin-top: 50px;
 }
 
 h1
@@ -49,6 +50,13 @@ th
   display: inline-block;
 }
 
+#interrogation
+{
+  background-image: url('interrogation.png');
+  width: 300px;
+  height: 380px;
+}
+
 .divh
 {
   display: inline-block;
@@ -56,4 +64,25 @@ th
   color: #0277BD;
   margin-left: 30px;
   height: 100%;
+}
+
+.buttonSupp
+{
+  padding-left: 40px;
+}
+
+.goRight
+{
+  margin-left: 70px;
+}
+
+.goRight2
+{
+  margin-left: 200px;
+  margin-top: 20px;
+}
+
+.goRight3
+{
+  margin-top: 20px;
 }
