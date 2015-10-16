@@ -16,7 +16,7 @@ class Location < ActiveRecord::Base
 	end
 
 	def humidity
-		@forecast.currently.humidity
+		@forecast.currently.humidity.round(2)
 	end
 
 end

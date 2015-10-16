@@ -57,6 +57,48 @@ th
   height: 380px;
 }
 
+#cagoule
+{
+  background-image: url('cagoule.png');
+  width: 300px;
+  height: 300px;
+}
+
+#fog
+{
+  background-image: url('fog.png');
+  width: 100px;
+  height: 100px;
+}
+
+#rain
+{
+  background-image: url('rain.png');
+  width: 100px;
+  height: 100px;
+}
+
+#sun
+{
+  background-image: url('sun.png');
+  width: 100px;
+  height: 100px;
+}
+
+#wind
+{
+  background-image: url('wind.png');
+  width: 100px;
+  height: 100px;
+}
+
+#cloudy
+{
+  background-image: url('cloudy.png');
+  width: 100px;
+  height: 100px;
+}
+
 .divh
 {
   display: inline-block;
@@ -84,5 +126,22 @@ th
 
 .goRight3
 {
-  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.goBottom
+{
+  margin-top: 80px;
+}
+
+.centrer
+{
+  margin-top: 80px;
+  margin-left: 320px;
+}
+
+.retour
+{
+  margin-top: 120px;
+  margin-left: -300px;
 }

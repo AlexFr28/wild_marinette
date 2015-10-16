@@ -1,16 +1,29 @@
-%div{:class => 'col-md-6'}
-	%h1{:style => "font-size:100px;text-align:center"}
-		=@location.town.upcase
+%div{:class => 'row'}
+	%div{:class => 'col-md-6'}
+		%h1{:style => "font-size:80px;text-align:center"}
+			=@location.town.upcase
+			/ = button_to 'Retour', root_path, :methode => :get, :class => 'btn btn-primary retour' 
 
-%div{:class => 'col-md-6'}
-	%div
-		#temp
-		.divh= "#{@tempC} °C"
-	%div
-		#drop
-		.divh= "#{@humidity} %"
-	%div
-		%p= @icon
+	%div{:class => 'col-md-3'}
+		%div
+			#temp
+			.divh= "#{@tempC} °C"
+		%div
+			#drop
+			.divh= "#{@humidity} %"
+
+	%div{:class => 'col-md-3'}
+		- if @icon == 'fog'
+			#fog
+		- if @icon == 'rain'
+			#rain
+		- if @icon == 'sun'
+			#sun
+		- if @icon == 'wind'
+			#wind
+		- if @icon == 'cloudy'
+			#cloudy
+		/ %p= @icon
 
 %div{:class => 'row'}
 	%div{:class => 'col-md-12'}
@@ -19,15 +32,20 @@
 		%div{:style => "font-size:40px;text-align:center;color:red"}
 			Pensez à vous hydrater
 
-	- if @tempC < 5
+	- if @tempC <= 5
 		%div{:style => "font-size:40px;text-align:center;color:red"}
 			Fous ta cagoule !
 
 %div{:class => 'row'}
 	%div{:class => 'col-md-6'}
-	- if @tempC > 28
-		%iframe{:allowfullscreen => "", :frameborder => "0", :height => "360", :src => "https://www.youtube.com/embed/QITYRHQ_8Us?start=47&end=59&autoplay=1", :width => "640"}
+	
+		- if @tempC > 28
+			%iframe{:class => 'centrer', :allowfullscreen => "", :frameborder => "0", :height => "360", :src => "https://www.youtube.com/embed/QITYRHQ_8Us?start=47&end=59&autoplay=1", :width => "640"}
+		- if @tempC < 5
+			%iframe{:class => 'goRight2 goBottom', :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/Ud_-AuBmp6Q?start=40&end=52&autoplay=1", :width => "420"}
+		- if @icon == "rain" && @tempC > 5
+			%iframe{:class => 'goRight2 goBottom', :allowfullscreen => "", :frameborder => "0", :height => "360", :src => "https://www.youtube.com/embed/rmCpOKtN8ME?start=1m06&end=1m19&autoplay=1", :width => "480"}
 		
 	%div{:class => 'col-md-6'}
-	- if @tempC < 5
-		%iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/Ud_-AuBmp6Q?start=40&end=52&autoplay=1", :width => "420"}
+		- if @tempC < 5
+			#cagoule{:class => 'goRight2 goBottom'}

@@ -27,7 +27,7 @@ class LocationsController < ApplicationController
 		@location = Location.find(params[:id])
 		@tempC = @location.temperature
 		@icon = @location.weather
-		@humidity = @location.humidity * 100
+		@humidity = (@location.humidity * 100).round
 	end
 
 	def destroy
