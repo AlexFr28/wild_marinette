@@ -1,9 +1,10 @@
 class Location < ActiveRecord::Base
 
+  attr_accessible :address, :latitude, :longitude
+  geocoded_by :adress
+  after_validation :geocode
 	attr_reader :forecast
 
-	geocoded_by :town
-	after_validation :geocode
 
 	def temperature
 		@forecast = ForecastIO.forecast(self.latitude, self.longitude)
@@ -18,5 +19,4 @@ class Location < ActiveRecord::Base
 	def humidity
 		@forecast.currently.humidity.round(2)
 	end
-
 end
