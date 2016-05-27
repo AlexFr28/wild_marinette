@@ -16,6 +16,3 @@
 //= require underscore-min
 //= require gmaps/google
 //= require_tree .
-
-
-
