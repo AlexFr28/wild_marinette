@@ -1,6 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'forecast_io'
+
+ForecastIO.api_key = '0341701953c6f02486ba8cbca8819c9c'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
