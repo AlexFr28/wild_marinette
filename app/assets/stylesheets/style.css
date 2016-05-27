@@ -1,3 +1,4 @@
+
 body{
   background-color: #BFD4FF;
   background-attachment: fixed;
@@ -10,21 +11,22 @@ h1 {
   margin-left: 50px;
 }
 p {
-  font-family: helvetica;
-  color: #01579B;
+  background-color: #BFD4FF;
+  margin-top: 50px;
 }
 
-table {
-  width: 300px;
-  margin-top: 50px;
+h1
+{
+  color: #0277BD;
   margin-left: 50px;
 }
+
 
 #map {
 
   border: 3px solid #0277BD;
   margin-top: 20px;
-  
+
 }
 
 table #map {
@@ -35,4 +37,124 @@ table #map {
 th {
   color: red;
   text-align: left
+  border: 3px solid #0277BD;
+  margin-top: 20px;
+}
+
+th
+{
+  color: red;
+  text-align: left
+}
+
+#temp
+{
+  background-image: url('temp.png');
+  width: 60px;
+  height: 120px;
+  display: inline-block;
+}
+
+#drop
+{
+  background-image: url('drop.png');
+  width: 60px;
+  height: 120px;
+  display: inline-block;
+}
+
+#interrogation
+{
+  background-image: url('interrogation.png');
+  width: 300px;
+  height: 380px;
+}
+
+#cagoule
+{
+  background-image: url('cagoule.png');
+  width: 300px;
+  height: 300px;
+}
+
+#fog
+{
+  background-image: url('fog.png');
+  width: 100px;
+  height: 100px;
+}
+
+#rain
+{
+  background-image: url('rain.png');
+  width: 100px;
+  height: 100px;
+}
+
+#sun
+{
+  background-image: url('sun.png');
+  width: 100px;
+  height: 100px;
+}
+
+#wind
+{
+  background-image: url('wind.png');
+  width: 100px;
+  height: 100px;
+}
+
+#cloudy
+{
+  background-image: url('cloudy.png');
+  width: 100px;
+  height: 100px;
+}
+
+.divh
+{
+  display: inline-block;
+  font-size: 50px;
+  color: #0277BD;
+  margin-left: 30px;
+  height: 100%;
+}
+
+.buttonSupp
+{
+  padding-left: 40px;
+}
+
+.goRight
+{
+  margin-left: 70px;
+}
+
+.goRight2
+{
+  margin-left: 200px;
+  margin-top: 20px;
+}
+
+.goRight3
+{
+  margin-left: 50px;
+}
+
+.goBottom
+{
+  margin-top: 80px;
+}
+
+.centrer
+{
+  margin-top: 80px;
+  margin-left: 320px;
+}
+
+.retour
+{
+  margin-top: 120px;
+  margin-left: -300px;
 }

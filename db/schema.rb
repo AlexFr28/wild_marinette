@@ -14,9 +14,13 @@
 ActiveRecord::Schema.define(version: 20151015142037) do
 
   create_table "users", force: :cascade do |t|
+
+    t.string   "address"
+    t.string   "town"
+    t.string   "country"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "address"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -4,7 +4,15 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
   root 'users#index'
+  root 'locations#index'
+
+  get '/locations/new' => 'locations#new'
+  post '/locations' => 'locations#create'
+  get '/locations/show/:id' => 'locations#show', as: :show_location
+  post '/locations/destroy/:id' => 'locations#destroy', as: :delete_location
+  resources :locations
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
