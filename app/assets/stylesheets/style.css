@@ -1,16 +1,5 @@
-
-body{
-  background-color: #BFD4FF;
-  background-attachment: fixed;
-  background-position: no-repeat;
-
-
-}
-h1 {
-  color:#0277BD;
-  margin-left: 50px;
-}
-p {
+body
+{
   background-color: #BFD4FF;
   margin-top: 50px;
 }
@@ -21,22 +10,20 @@ h1
   margin-left: 50px;
 }
 
-
-#map {
-
-  border: 3px solid #0277BD;
-  margin-top: 20px;
-
+p
+{
+  font-family: helvetica;
+  color: #01579B;
 }
 
-table #map {
-  display: inline-block;
+table
+{
+  margin-top: 50px;
+  margin-left: 50px;
 }
 
-
-th {
-  color: red;
-  text-align: left
+#map
+{
   border: 3px solid #0277BD;
   margin-top: 20px;
 }
